@@ -4,6 +4,6 @@
  * _puts - Prints a string to the standard output.
  * @s: The string to be printed.
  */
-void _puts(char *s)
+void _puts(char *s __attribute__((unused)))
 {
 }

@@ -8,7 +8,7 @@
  * Return: The pointer to the first occurrence of 'c' in 's',
  * or NULL if not found.
  */
-char *_strchr(char *s, char c)
+char *_strchr(char *s __attribute__((unused)), char c __attribute__((unused)))
 {
 	return (NULL);
 }

@@ -6,7 +6,7 @@
  *
  * Return: 1 if the character is an alphabetic character, 0 otherwise.
  */
-int _isalpha(int c)
+int _isalpha(int c __attribute__((unused)))
 {
 	return (0);
 }

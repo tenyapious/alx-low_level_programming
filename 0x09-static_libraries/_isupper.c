@@ -6,7 +6,7 @@
  *
  * Return: 1 if the character is an uppercase letter, 0 otherwise.
  */
-int _isupper(int c)
+int _isupper(int c __attribute__((unused)))
 {
 	return (0);
 }

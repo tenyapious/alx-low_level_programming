@@ -6,7 +6,7 @@
  *
  * Return: The absolute value of the integer.
  */
-int _abs(int n)
+int _abs(int n __attribute__((unused)))
 {
 	return (0);
 }

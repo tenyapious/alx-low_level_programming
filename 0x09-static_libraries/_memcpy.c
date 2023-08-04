@@ -8,7 +8,7 @@
  *
  * Return: The pointer to the destination memory area 'dest'.
  */
-char *_memcpy(char *dest, char *src, unsigned int n)
+char *_memcpy(char *dest __attribute__((unused)), char *src __attribute__((unused)), unsigned int n __attribute__((unused)))
 {
 	return (dest);
 }

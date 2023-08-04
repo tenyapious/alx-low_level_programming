@@ -6,7 +6,7 @@
  *
  * Return: 1 if the character is a digit, 0 otherwise.
  */
-int _isdigit(int c)
+int _isdigit(int c __attribute__((unused)))
 {
 	return (0);
 }
