@@ -9,7 +9,7 @@
  * Return: The number of characters in the initial segment of 's'
  * that match 'accept'.
  */
-unsigned int _strspn(char *s __attribute__((unused)), char *accept __attribute__((unused)))
+unsigned int _strspn(char *s, char *accept)
 {
 	return (0);
 }

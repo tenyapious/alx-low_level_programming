@@ -9,7 +9,7 @@
  * from 'accept' in 's',
  *         or NULL if no such character is found.
  */
-char *_strpbrk(char *s __attribute__((unused)), char *accept __attribute__((unused)))
+char *_strpbrk(char *s, char *accept)
 {
 	return (NULL);
 }

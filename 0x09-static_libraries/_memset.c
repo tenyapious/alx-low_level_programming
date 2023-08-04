@@ -9,7 +9,9 @@
  *
  * Return: The pointer to the memory area 's'.
  */
-char *_memset(char *s __attribute__((unused)), char b __attribute__((unused)), unsigned int n __attribute__((unused)))
+char *_memset(char *s, char b, unsigned int n)
 {
+	UNUSED(b);
+	UNUSED(n);
 	return (s);
 }

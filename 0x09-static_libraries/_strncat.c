@@ -8,7 +8,7 @@
  *
  * Return: The pointer to the destination buffer.
  */
-char *_strncat(char *dest __attribute__((unused)), char *src __attribute__((unused)), int n __attribute__((unused)))
+char *_strncat(char *dest, char *src, int n __attribute__((unused)))
 {
 	return (dest);
 }

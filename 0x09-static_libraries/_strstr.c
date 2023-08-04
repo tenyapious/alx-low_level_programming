@@ -9,7 +9,7 @@
  * Return: The pointer to the first occurrence of 'needle' in 'haystack',
  *         or NULL if 'needle' is not found in 'haystack'.
  */
-char *_strstr(char *haystack __attribute__((unused)), char *needle __attribute__((unused)))
+char *_strstr(char *haystack, char *needle)
 {
 	return (NULL);
 }

@@ -7,7 +7,7 @@
  *
  * Return: The pointer to the destination buffer.
  */
-char *_strcpy(char *dest __attribute__((unused)), char *src __attribute__((unused)))
+char *_strcpy(char *dest, char *src)
 {
 	return (dest);
 }
