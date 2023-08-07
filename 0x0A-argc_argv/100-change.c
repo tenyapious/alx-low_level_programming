@@ -68,7 +68,7 @@ int main(int argc, char **argv)
 	{
 		if (!isdigit(argv[1][i]))
 		{
-			printf("Error\n");
+			printf("0\n");
 			return (0);
 		}
 		i++;
