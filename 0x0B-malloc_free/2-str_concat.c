@@ -36,11 +36,6 @@ char *str_concat(char *s1, char *s2)
 	temp[0] = s1;
 	temp[1]	= s2;
 
-	if (s1 == NULL || s2 == NULL)
-	{
-		return (NULL);
-	}
-
 	for (i = 0; i < 2; i++)
 	{
 		strLen += _strLen(temp[i]);
@@ -58,6 +53,12 @@ char *str_concat(char *s1, char *s2)
 	for (i = 0; i < 2; i++)
 	{
 		j = 0;
+
+		if (temp[i] == NULL)
+		{
+			temp[i] = "";
+		}
+
 		while (temp[i][j] != '\0')
 		{
 			str[strLen] = temp[i][j];
