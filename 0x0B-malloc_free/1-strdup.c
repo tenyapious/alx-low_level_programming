@@ -13,6 +13,11 @@ char *_strdup(char *str)
 	char *strCpy;
 	int strLen = 0;
 
+	if (str == NULL)
+	{
+		return (NULL);
+	}
+
 	while (str[strLen] != '\0')
 	{
 		strLen++;
