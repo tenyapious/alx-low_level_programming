@@ -21,6 +21,25 @@ int _strLen(char *str)
 }
 
 /**
+ * validateStr - check if string is not NULL
+ * @str: the string
+ *
+ * Return: empty string if invalid else the same string
+ */
+char *validateStr(char *str)
+{
+	if (str == NULL)
+	{
+		return ("");
+	}
+	else
+	{
+		return (str);
+	}
+}
+
+
+/**
  * str_concat - concatenate two strings
  * @s1: string one
  * @s2: string two
@@ -33,8 +52,8 @@ char *str_concat(char *s1, char *s2)
 	int i, j, strLen = 0;
 	char *temp[2];
 
-	temp[0] = s1;
-	temp[1]	= s2;
+	temp[0] = validateStr(s1);
+	temp[1]	= validateStr(s2);
 
 	for (i = 0; i < 2; i++)
 	{
@@ -45,7 +64,6 @@ char *str_concat(char *s1, char *s2)
 	str = malloc(strLen * sizeof(char));
 	if (str == NULL)
 	{
-		printf("failed\n");
 		return (NULL);
 	}
 
@@ -53,12 +71,6 @@ char *str_concat(char *s1, char *s2)
 	for (i = 0; i < 2; i++)
 	{
 		j = 0;
-
-		if (temp[i] == NULL)
-		{
-			temp[i] = "";
-		}
-
 		while (temp[i][j] != '\0')
 		{
 			str[strLen] = temp[i][j];
