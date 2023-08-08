@@ -3,6 +3,24 @@
 #include "main.h"
 
 /**
+ * _strLen - count string char
+ * @str: string to count
+ *
+ * Return: length of string
+ */
+int _strLen(char *str)
+{
+	int j = 0;
+
+	while (str[j] != '\0')
+	{
+		j++;
+	}
+
+	return (j);
+}
+
+/**
  * str_concat - concatenate two strings
  * @s1: string one
  * @s2: string two
@@ -18,14 +36,14 @@ char *str_concat(char *s1, char *s2)
 	temp[0] = s1;
 	temp[1]	= s2;
 
+	if (s1 == NULL || s2 == NULL)
+	{
+		return (NULL);
+	}
+
 	for (i = 0; i < 2; i++)
 	{
-		j = 0;
-		while (temp[i][j] != '\0')
-		{
-			strLen++;
-			j++;
-		}
+		strLen += _strLen(temp[i]);
 	}
 	strLen++;
 
