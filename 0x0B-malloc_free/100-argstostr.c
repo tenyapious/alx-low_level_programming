@@ -3,128 +3,78 @@
 #include "main.h"
 
 /**
- * _strLen - count string char
- * @str: string to count
+ * _argStrLen - count string char
+ * @ac: args length
+ * @av args array
  *
- * Return: length of string
+ * Return: length of array string
  */
-int _strLen(char *str)
+int _argStrLen(int ac, char **av)
 {
-	int j = 0;
+	int i, j, len = 0;
 
-	while (str[j] != '\0')
+	for (i = 1; i < ac; i++)
 	{
-		j++;
-	}
+		j = 0;
+		while (av[i][j] != '\0')
+		{
+			j++;
+		}
 
-	return (j);
+		if (i > 1)
+		{
+			j++;
+		}
+
+		len += j;
+	}
+	len++;
+
+	return (len);
 }
 
 /**
- * validateStr - check if string is not NULL
- * @str: the string
+ * argstostr - concatenate args of a program
+ * @ac: args length
+ * @av: args array
  *
- * Return: empty string if invalid else the same string
+ * Return: concatenated str
  */
-char *validateStr(char *str)
-{
-	if (str == NULL)
-	{
-		return ("");
-	}
-	else
-	{
-		return (str);
-	}
-}
-
-/**
- * alloc_mem - allocate memory for str concatenation
- * @temp: array of two str
- *
- * Return: pointer to allocated memory
- */
-char *alloc_mem(char *temp[])
+char *argstostr(int ac, char **av)
 {
 	char *str;
-	int i, strLen = 0;
+	int i, j, k = 0, argStrLen;
 
-	for (i = 0; i < 2; i++)
+	if (ac == 0 || av == NULL)
 	{
-		strLen += _strLen(temp[i]);
-	}
-	strLen++;
-
-	if (temp[0][0] != '\0')
-	{
-		strLen++;
+		return (NULL);
 	}
 
-	str = malloc(strLen * sizeof(char));
+	argStrLen = _argStrLen(ac, av);
+
+	str = malloc(argStrLen * sizeof(char));
 	if (str == NULL)
 	{
 		return (NULL);
 	}
 
-	return (str);
-}
-
-/**
- * str_concat - concatenate two strings
- * @s1: string one
- * @s2: string two
- *
- * Return: a pointer to the new string
- */
-char *str_concat(char *s1, char *s2)
-{
-	char *str;
-	int i, j, strLen = 0;
-	char *temp[2];
-
-	temp[0] = validateStr(s1);
-	temp[1]	= validateStr(s2);
-
-	str = alloc_mem(temp);
-
-	strLen = 0;
-	for (i = 0; i < 2; i++)
-	{
-		j = 0;
-
-		while (temp[i][j] != '\0')
-		{
-			str[strLen] = temp[i][j];
-			strLen++;
-			j++;
-		}
-		if (temp[0][0] != '\0' && i == 0)
-		{
-			str[strLen] = '\n';
-			strLen++;
-		}
-	}
-	str[strLen] = '\0';
-
-	return (str);
-}
-
-/**
- * argstostr - concatenate all arguments
- * @ac: arguments count
- * @av: arguments array
- *
- * Return: pointer to new string
- */
-char *argstostr(int ac, char **av)
-{
-	char *string = NULL;
-	int i;
-
 	for (i = 1; i < ac; i++)
 	{
-		string = str_concat(string, av[i]);
-	}
+		j = 0;
+		while (av[i][j] != '\0')
+		{
+			str[k] = av[i][j];
+			k++;
+			j++;
+		}
 
-	return (string);
+		if (i + 1 < ac)
+		{
+			str[k] = '\n';
+			k++;
+		}
+	}
+	str[k] = '\0';
+
+	return (str);
 }
