@@ -2,30 +2,32 @@
 #include <stdlib.h>
 #include "main.h"
 
+/**
+ * alloc_grid - create 2d array with malloc
+ * @width: width of the array
+ * @height: height of the array
+ *
+ * Return: 2d array
+ */
 int **alloc_grid(int width, int height)
 {
-	int ***grid;
-	int **box[width][height];
 	int i, j;
+	int **arr;
 
-	grid = box;
+	arr = malloc(height * sizeof(int *));
+
+	for (i = 0; i < height; i++)
+	{
+		arr[i] = malloc(width * sizeof(int));
+	}
 
 	for (i = 0; i < height; i++)
 	{
 		for (j = 0; j < width; j++)
 		{
-			box[i][j] = malloc(height * width * sizeof(int *));
-			box[i][j] = 0;
+			arr[i][j] = 0;
 		}
 	}
 
-
-
-	return (grid);
-}
-
-int main()
-{
-	alloc_grid(2,2);
-	return (0);
+	return (arr);
 }
