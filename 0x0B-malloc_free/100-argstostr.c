@@ -4,10 +4,10 @@
 
 /**
  * _argStrLen - count string char
- * @ac: args length
- * @av args array
+ * @ac: args string to len
+ * @av: args array
  *
- * Return: length of array string
+ * Return: length of string
  */
 int _argStrLen(int ac, char **av)
 {
@@ -21,12 +21,7 @@ int _argStrLen(int ac, char **av)
 			j++;
 		}
 
-		if (i > 1)
-		{
-			j++;
-		}
-
-		len += j;
+		len += ++j;
 	}
 	len++;
 
@@ -68,13 +63,11 @@ char *argstostr(int ac, char **av)
 			j++;
 		}
 
-		if (i + 1 < ac)
-		{
-			str[k] = '\n';
-			k++;
-		}
+		str[k] = '\n';
+		k++;
 	}
-	str[k] = '\0';
+	str[k] = '\n';
+	str[k + 1] = '\0';
 
 	return (str);
 }
