@@ -35,6 +35,56 @@ char *validateStr(char *str)
 	return (str);
 }
 
+/**
+ * _string_nconcat - concatenate two strings
+ * @temp: array of the two strings
+ * @arrInt: array of integes
+ *
+ * Return: a pointer to the new string
+ */
+char *_string_nconcat(char **temp, unsigned int arrInt[])
+{
+	char *str;
+	unsigned int j, k, n = arrInt[2];
+	unsigned int strLen = arrInt[0], strsLen = arrInt[1];
+
+	str = malloc(strsLen * sizeof(char));
+	if (str == NULL)
+	{
+		return (NULL);
+	}
+
+	k = 0;
+	j = 0;
+	while (temp[0][j] != '\0')
+	{
+		str[k] = temp[0][j];
+		k++;
+		j++;
+	}
+
+	j = 0;
+	if (n < strLen)
+	{
+		while (j < n)
+		{
+			str[k] = temp[1][j];
+			k++;
+			j++;
+		}
+	} else
+	{
+		while (temp[1][j] != '\0')
+		{
+			str[k] = temp[1][j];
+			k++;
+			j++;
+		}
+	}
+	str[k] = '\0';
+
+	return (str);
+}
 
 /**
  * string_nconcat - concatenate two strings
@@ -47,7 +97,8 @@ char *validateStr(char *str)
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
 	char *str;
-	unsigned int i, j, k, strLen = 0, strsLen = 0;
+	unsigned int i, strLen = 0, strsLen = 0;
+	unsigned int arrInt[3];
 	char *temp[2];
 
 	temp[0] = validateStr(s1);
@@ -55,7 +106,6 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 
 	for (i = 0; i < 2; i++)
 	{
-
 		strLen = _strLen(temp[i]);
 		if (i == 1)
 		{
@@ -72,48 +122,11 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 		}
 	}
 
-	strsLen++;
+	arrInt[0] = strLen;
+	arrInt[1] = strsLen;
+	arrInt[2] = n;
 
-	str = malloc(strsLen * sizeof(char));
-	if (str == NULL)
-	{
-		return (NULL);
-	}
-
-	k = 0;
-	for (i = 0; i < 2; i++)
-	{
-		j = 0;
-		if (i == 1)
-		{
-			if (n < strLen)
-			{
-				while (j < n)
-				{
-					str[k] = temp[i][j];
-					k++;
-					j++;
-				}
-			} else
-			{
-				while (temp[i][j] != '\0')
-				{
-					str[k] = temp[i][j];
-					k++;
-					j++;
-				}
-			}
-		} else
-		{
-			while (temp[i][j] != '\0')
-			{
-				str[k] = temp[i][j];
-				k++;
-				j++;
-			}
-		}
-	}
-	str[k] = '\0';
+	str =  _string_nconcat(temp, arrInt);
 
 	return (str);
 }
