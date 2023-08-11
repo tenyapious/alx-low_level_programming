@@ -22,13 +22,18 @@ void print_db(int result, int i)
 		}
 		result--;
 	}
+
+	if (i <= 9)
+	{
+		_putchar(' ');
+	}
 	_putchar(48 + tense);
 	_putchar(48 + ones);
 	if (i < 9)
 	{
 		_putchar(',');
-		_putchar(' ');
 	}
+
 }
 
 /**
@@ -50,12 +55,15 @@ void times_table(void)
 				print_db(result, i);
 			} else
 			{
+				if (i <= 9)
+				{
+					_putchar(' ');
+					_putchar(' ');
+				}
 				_putchar(48 + result);
 				if (i < 9)
 				{
 					_putchar(',');
-					_putchar(' ');
-					_putchar(' ');
 				}
 			}
 			i++;
