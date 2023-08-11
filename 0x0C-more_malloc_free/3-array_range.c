@@ -20,11 +20,15 @@ int *array_range(int min, int max)
 	}
 	else if (min == max)
 	{
-		arrLen = 1;
+		arrLen = 2;
 	}
 	else if (min == 0)
 	{
 		arrLen = max + 1;
+	}
+	else
+	{
+		arrLen = max;
 	}
 
 	ptr =  malloc(arrLen * sizeof(int));
