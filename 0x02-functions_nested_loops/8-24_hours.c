@@ -23,6 +23,7 @@ void jack_bauer(void)
 	int m1 = 0, m2 = 0;
 	int s1 = 0, s2 = 0;
 	int *time[4];
+	int m1pt = 9;
 
 	time[0] = &m2;
 	time[1] = &m1;
@@ -32,7 +33,11 @@ void jack_bauer(void)
 	while (m2 <= 2)
 	{
 		m1 = 0;
-		while (m1 <= 3)
+		if (m2 == 2)
+		{
+			m1pt = 3;
+		}
+		while (m1 <= m1pt)
 		{
 			s2 = 0;
 			while (s2 <= 5)
