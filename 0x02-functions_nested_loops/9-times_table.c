@@ -55,7 +55,7 @@ void times_table(void)
 				print_db(result, i);
 			} else
 			{
-				if (i <= 9)
+				if (i > 0 && i <= 9)
 				{
 					_putchar(' ');
 					_putchar(' ');
