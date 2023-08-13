@@ -8,13 +8,14 @@
 */
 int main(void)
 {
-	int i = 0, first = 0, second = 1, result = 0;
+	unsigned long int i = 0, first = 0;
+	unsigned long int second = 1, result = 0;
 
 	while (i < 50)
 	{
 		result = first + second;
 
-		printf("%d\n", result);
+		printf("%ld\n", result);
 
 		first = second;
 		second = result;
