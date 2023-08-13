@@ -2,7 +2,8 @@
 #include <stdlib.h>
 
 /**
- * main - print the first 50 Fibonacci numbers.
+ * main - finds and prints the sum of the even-valued terms
+ * of the fibonacci terms
  *
  * Return: Always 0.
 */
