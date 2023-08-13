@@ -15,7 +15,10 @@ int main(void)
 	{
 		result = first + second;
 
-		printf("%ld\n", result);
+		if (i < 49)
+			printf("%ld, ", result);
+		else
+			printf("%ld\n", result);
 
 		first = second;
 		second = result;
