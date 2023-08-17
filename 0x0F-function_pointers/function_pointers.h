@@ -7,3 +7,8 @@ void print_name(char *name, void (*f)(char *));
 #define ARRAY_ITERATOR
 void array_iterator(int *array, size_t size, void (*action)(int));
 #endif
+
+#ifndef INT_INDEX
+#define INT_INDEX
+int int_index(int *array, int size, int (*cmp)(int));
+#endif
