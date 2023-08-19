@@ -4,39 +4,42 @@
 /**
  * print_all - print values of diff data type
  * @format: formatting string
-*/
+ */
 void print_all(const char * const format, ...)
 {
-	int i = 0;
-	char *separator = ", ";
-	char *str;
+	int i = 0, separate = 0;
+	char *separator = "", *str;
 	va_list args;
 
 	va_start(args, format);
 	while (format[i] != '\0')
 	{
-		if (format[i + 1] == '\0')
-			separator = "";
+		if (separate)
+			separator = ", ";
 		switch (format[i])
 		{
 			case 'c':
-				printf("%c", va_arg(args, int));
 				printf("%s", separator);
+				printf("%c", va_arg(args, int));
+				separate = 1;
 				break;
 			case 'i':
-				printf("%d", va_arg(args, int));
 				printf("%s", separator);
+				printf("%d", va_arg(args, int));
+				separate = 1;
 				break;
 			case 'f':
-				printf("%f", va_arg(args, double));
 				printf("%s", separator);
+				printf("%f", va_arg(args, double));
+				separate = 1;
 				break;
 			case 's':
 				str = va_arg(args, char *);
 				if (str == NULL)
 					str = "(nil)";
-				printf("%s", str);
 				printf("%s", separator);
+				printf("%s", str);
+				separate = 1;
 				break;
 		}
 		i++;
@@ -44,5 +47,4 @@ void print_all(const char * const format, ...)
 	va_end(args);
 
 	printf("\n");
-
 }
