@@ -30,7 +30,7 @@ void print_all(const char * const format, ...)
 				break;
 			case 'f':
 				printf("%s", separator);
-				printf("%.2f", va_arg(args, double));
+				printf("%f", va_arg(args, double));
 				separate = 1;
 				break;
 			case 's':
