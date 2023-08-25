@@ -25,3 +25,8 @@ int _putchar(char c);
 #define PRINT_LIST
 size_t print_list(const list_t *h);
 #endif
+
+#ifndef LIST_LEN
+#define LIST_LEN
+size_t list_len(const list_t *h);
+#endif
