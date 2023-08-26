@@ -6,10 +6,13 @@
  * @h: head of linked list
  *
  * Return: length of linked list
-*/
+ */
 size_t print_list(const list_t *h)
 {
 	int i = 0;
+
+	if (h == NULL)
+		return (NULL);
 
 	while (h->next != NULL)
 	{
