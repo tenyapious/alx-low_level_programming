@@ -10,8 +10,7 @@ int main(void)
 {
     char *str;
 
-	printf("%d/n", 9/2);
-    str = "123456789";
+    str = "Holberton!";
     puts_half(str);
     return (0);
 }
