@@ -40,3 +40,8 @@ list_t *add_node(list_t **head, const char *str);
 #define ADD_NODE_END
 list_t *add_node_end(list_t **head, const char *str);
 #endif
+
+#ifndef FREE_LIST
+#define FREE_LIST
+void free_list(list_t *head);
+#endif
