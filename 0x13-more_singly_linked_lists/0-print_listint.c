@@ -4,9 +4,10 @@
 #include "lists.h"
 
 /**
- * main - check the code
- * 
- * Return: Always 0.
+ * print_listint - print data from linked list
+ * @h: head of the linked list
+ *
+ * Return: the length of the linked list.
  */
 size_t print_listint(const listint_t *h)
 {
