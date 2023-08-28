@@ -24,3 +24,13 @@ int _putchar(char c);
 #define PRINT_LISTINT
 size_t print_listint(const listint_t *h);
 #endif
+
+#ifndef LISTINT_LEN
+#define LISTINT_LEN
+size_t listint_len(const listint_t *h);
+#endif
+
+#ifndef ADD_NODEINT
+#define ADD_NODEINT
+listint_t *add_nodeint(listint_t **head, const int n);
+#endif
