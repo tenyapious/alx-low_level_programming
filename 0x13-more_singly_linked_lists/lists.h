@@ -49,3 +49,8 @@ void free_listint(listint_t *head);
 #define FREE_LISTINT2
 void free_listint2(listint_t **head);
 #endif
+
+#ifndef POP_LISTINT
+#define POP_LISTINT
+int pop_listint(listint_t **head);
+#endif
