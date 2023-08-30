@@ -69,3 +69,8 @@ int sum_listint(listint_t *head);
 #define INSERT_NODEINT_AT_INDEX
 listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n);
 #endif
+
+#ifndef DELETE_NODEINT_AT_INDEX
+#define DELETE_NODEINT_AT_INDEX
+int delete_nodeint_at_index(listint_t **head, unsigned int index);
+#endif
