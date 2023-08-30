@@ -59,3 +59,8 @@ int pop_listint(listint_t **head);
 #define GET_NODEINT_AT_INDEX
 listint_t *get_nodeint_at_index(listint_t *head, unsigned int index);
 #endif
+
+#ifndef SUM_LISTINT
+#define SUM_LISTINT
+int sum_listint(listint_t *head);
+#endif
