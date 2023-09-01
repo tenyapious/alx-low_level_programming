@@ -74,3 +74,8 @@ listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n);
 #define DELETE_NODEINT_AT_INDEX
 int delete_nodeint_at_index(listint_t **head, unsigned int index);
 #endif
+
+#ifndef REVERSE_LISTINT
+#define REVERSE_LISTINT
+listint_t *reverse_listint(listint_t **head);
+#endif
