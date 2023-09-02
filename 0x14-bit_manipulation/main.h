@@ -12,3 +12,8 @@ unsigned int binary_to_uint(const char *b);
 #define PRINT_BINARY
 void print_binary(unsigned long int n);
 #endif
+
+#ifndef GET_BIT
+#define GET_BIT
+int get_bit(unsigned long int n, unsigned int index);
+#endif
