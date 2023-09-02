@@ -1,0 +1,51 @@
+#include <stdio.h>
+#include "main.h"
+
+/**
+ * get_bit - get value of bit at given index of an int
+ * @n: number
+ * @index: given index
+ *
+ * Return: value of bit or -1
+ */
+int get_bit(unsigned long int n, unsigned int index)
+{
+	if ((sizeof(n) * 8) < index)
+		return (-1);
+
+	if ((n >> index) & 1)
+		return (1);
+	else
+		return (0);
+
+	return (-1);
+}
+
+
+/**
+ * clear_bit - clear the value of a bit to 0 at a given index
+ * @n: number
+ * @index: index
+ *
+ * Return: 1 if it works, or -1 if an error occurred
+*/
+int clear_bit(unsigned long int *n, unsigned int index)
+{
+	unsigned int i, j;
+
+	if ((sizeof(*n) * 8) < index)
+		return (-1);
+
+	i = 1;
+	j = 0;
+	while (j < index)
+	{
+		i *= 2;
+		j++;
+	}
+
+	if (get_bit(*n, index) == 1)
+		*n = *n ^ i;
+
+	return (1);
+}
