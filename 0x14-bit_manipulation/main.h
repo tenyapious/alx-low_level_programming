@@ -17,3 +17,8 @@ void print_binary(unsigned long int n);
 #define GET_BIT
 int get_bit(unsigned long int n, unsigned int index);
 #endif
+
+#ifndef SET_BIT
+#define SET_BIT
+int set_bit(unsigned long int *n, unsigned int index);
+#endif
