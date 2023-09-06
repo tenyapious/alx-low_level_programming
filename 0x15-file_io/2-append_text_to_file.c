@@ -3,6 +3,13 @@
 #include <fcntl.h>
 #include <string.h>
 
+/**
+ * append_text_to_file - append text to file
+ * @filename: name of file to append text
+ * @text_content: text content to append to file
+ *
+ * Return: 1 on success, -1 on failure
+*/
 int append_text_to_file(const char *filename, char *text_content)
 {
 	int fd, byte_written;
