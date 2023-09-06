@@ -58,7 +58,7 @@ int main(int argc, char *argv[])
 		if (byte_written == -1)
 		{
 			dprintf(STDERR_FILENO, "Error: Can't write to file %s\n", argv[2]);
-			return (-1);
+			return (99);
 		}
 	} while (byte_read > 0);
 
