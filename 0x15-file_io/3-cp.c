@@ -12,7 +12,7 @@
  * 98 if file_from does not exist
  * 99 if create fails or write to file_to fails
  * 100 if closing a fd fails
-*/
+ */
 int main(int argc, char *argv[])
 {
 	int file_from_d, file_to_d;
@@ -49,11 +49,17 @@ int main(int argc, char *argv[])
 	do {
 		byte_read = read(file_from_d, buffer, 1024);
 		if (byte_read == -1)
-			return (-1);
+		{
+			dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
+			return (98);
+		}
 
 		byte_written = write(file_to_d, buffer, byte_read);
 		if (byte_written == -1)
+		{
+			dprintf(STDERR_FILENO, "Error: Can't write to file %s\n", argv[2]);
 			return (-1);
+		}
 	} while (byte_read > 0);
 
 	free(buffer);
