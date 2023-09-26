@@ -1,1 +1,0 @@
-Detailed readme coming soon
