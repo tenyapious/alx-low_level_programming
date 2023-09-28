@@ -33,3 +33,12 @@ int get_bit(unsigned long int n, unsigned int index);
 int set_bit(unsigned long int *n, unsigned int index);
 #endif
 
+#ifndef CLEAR_BIT_H
+#define CLEAR_BIT_H
+int clear_bit(unsigned long int *n, unsigned int index);
+#endif
+
+#ifndef GET_ENDIANNESS_H
+#define GET_ENDIANNESS_H
+int get_endianness(void);
+#endif
