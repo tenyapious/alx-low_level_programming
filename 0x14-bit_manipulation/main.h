@@ -22,3 +22,9 @@ void print_binary(unsigned long int n);
 #define _PUTCHAR_H
 int _putchar(char c);
 #endif
+
+#ifndef GET_BIT_H
+#define GET_BIT_H
+int get_bit(unsigned long int n, unsigned int index);
+#endif
+
