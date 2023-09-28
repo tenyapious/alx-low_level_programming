@@ -13,3 +13,12 @@ int _strlen(const char *s);
 int is_bin(const char *b);
 #endif
 
+#ifndef PRINT_BINARY_H
+#define PRINT_BINARY_H
+void print_binary(unsigned long int n);
+#endif
+
+#ifndef _PUTCHAR_H
+#define _PUTCHAR_H
+int _putchar(char c);
+#endif
