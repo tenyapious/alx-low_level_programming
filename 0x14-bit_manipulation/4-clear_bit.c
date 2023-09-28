@@ -30,7 +30,8 @@ int get_bit(unsigned long int n, unsigned int index)
  */
 int clear_bit(unsigned long int *n, unsigned int index)
 {
-	unsigned int i, val;
+	unsigned int i;
+	int val;
 
 	if ((sizeof(*n) * 8) < index)
 		return (-1);
@@ -41,7 +42,9 @@ int clear_bit(unsigned long int *n, unsigned int index)
 	while (index--)
 		i *= 2;
 
-	if (val)
+	if (val == -1)
+		return (-1);
+	else if (val)
 		*n = *n ^ i;
 	else
 		*n = *n & i;
