@@ -28,3 +28,8 @@ int _putchar(char c);
 int get_bit(unsigned long int n, unsigned int index);
 #endif
 
+#ifndef SET_BIT_H
+#define SET_BIT_H
+int set_bit(unsigned long int *n, unsigned int index);
+#endif
+
