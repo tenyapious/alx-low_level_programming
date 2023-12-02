@@ -30,7 +30,10 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	node->value = valueDup;
 
 	if (ht->array[index] == NULL)
+	{
+		node->next = NULL;
 		ht->array[index] = node;
+	}
 	else
 	{
 		node->next = ht->array[index];
