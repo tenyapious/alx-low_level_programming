@@ -20,10 +20,12 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	if (strlen(key) == 0 || key == NULL)
 		return (0);
 
-	k = strcpy(key);
+	
 
 	index = key_index((unsigned char *)key, ht->size);
 
+	node->key = key;
+	node->value = strdup(value);
 	node->next = ht->array[index];
 	ht->array[index] = node;
 
