@@ -7,11 +7,12 @@
  * @value: the value
  *
  * Return: 1 if successfull otherwise 0
-*/
+ */
 int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 {
 	hash_node_t *node;
 	unsigned long int index;
+	char *keyDup, *valueDup;
 
 	node = malloc(sizeof(hash_node_t));
 	if (node == NULL)
@@ -22,8 +23,11 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 
 	index = key_index((unsigned char *)key, ht->size);
 
-	node->key = strcpy(node->key, key);
-	node->value = strdup(value);
+	keyDup = strdup(key);
+	valueDup = strdup(value);
+
+	node->key = keyDup;
+	node->value = valueDup;
 	node->next = ht->array[index];
 	ht->array[index] = node;
 
