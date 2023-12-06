@@ -10,9 +10,7 @@ void hash_table_print(const hash_table_t *ht)
 	hash_node_t *temp;
 	int start = 1;
 
-	if (ht == NULL)
-		printf("%c%c\n", '{', '}');
-	else
+	if (ht != NULL)
 	{
 		for (i = 0; i < ht->size; i++)
 		{
