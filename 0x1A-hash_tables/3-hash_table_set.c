@@ -12,6 +12,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	hash_node_t *node;
 	unsigned long int index;
 	char *keyDup, *valueDup;
+
 	node = malloc(sizeof(hash_node_t));
 	if (node == NULL)
 		return (0);
